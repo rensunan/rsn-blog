@@ -82,7 +82,3 @@ astro.config.mjs        # Astro 配置：集成、Markdown 插件、Vite
 ## 部署
 
 站点是纯静态产物，构建后部署 `dist/` 目录即可，无需服务端。
-
-## 致谢
-
-本站基于 [Fuwari](https://github.com/saicaca/fuwari) 模板二次开发，遵循 [MIT License](./LICENSE)。
