@@ -4,9 +4,9 @@
 
 毕业于西安理工大学软件工程专业，目前专注于 Python 后端与 AI Agent 工程化方向。
 
-我的代码都在 [GitHub](https://github.com/rensunan)。
+个人博客在 [GitHub](https://github.com/rensunan)。
 
-::github{repo="rensunan/GeoWise-Analyzer"}
+::github{repo="rensunan/rsn-blog"}
 
 ## 技术方向
 
