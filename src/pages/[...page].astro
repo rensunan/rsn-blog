@@ -8,7 +8,14 @@ import { getSortedPosts } from "../utils/content-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
-	return paginate(allBlogPosts, { pageSize: PAGE_SIZE });
+	// 展示顺序：个人简历置顶，其余按项目编号从小到大（项目一 → 项目九，新项目排在最下面）
+	const rank = (slug: string) => {
+		if (slug === "resume") return -1;
+		const m = slug.match(/^project-(\d+)/);
+		return m ? Number(m[1]) : 999;
+	};
+	const ordered = [...allBlogPosts].sort((a, b) => rank(a.slug) - rank(b.slug));
+	return paginate(ordered, { pageSize: PAGE_SIZE });
 }) satisfies GetStaticPaths;
 // https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
 
